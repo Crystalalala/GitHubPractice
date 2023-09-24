@@ -1,0 +1,85 @@
+/* @import url('http:fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); */
+/* :root{
+    --success-color: #23cc71;
+    --error-color: #e74c3c;
+} */
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #ececec;
+}
+.box-area{
+    width: 930px;
+    
+} 
+
+.left-box{
+    background-color: #fdd3dd91;
+    border-radius: 20px;
+}
+.right-box{
+    padding: 40px 30px 40px 40px;
+   
+}
+img{
+    object-fit: cover;
+}
+.fullname-validation{
+    margin-top: 100px;
+}
+.mb-4 ::placeholder{
+  color: #5e64725b;
+}
+
+.mb-3 ::placeholder{
+    color: #5E64725b;
+}
+.terms{
+    color: #adafb3;
+    margin-top: 20px;
+}
+.create{
+    margin-top: 0;
+}
+.text-secondary{
+    margin-top: 20px;
+}
+.msg i{
+    color: #FF48A9;
+}
+
+
+@media only screen and (max-width:768px) {
+    .box-area{
+        margin: 0 10px
+    }
+    .left-box{
+        height: 100px;
+        overflow: hidden;
+    }
+    .right-box{
+        padding: 20px;
+    }
+    /* img{
+        margin-top: 
+    } */
+
+    .featured-image{
+        display: none;
+    }
+    
+    .msg{
+        margin-top: 25px;
+    }
+
+    .msg i{
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width:400){
+
+    .msg i{
+        font-size: px;
+        color:blue ;
+    }
+}
+

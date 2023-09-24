@@ -1,0 +1,74 @@
+// if(u_fullname.value.match(validateIfHasNumOrSpecial)){
+//     u_fullname.classList.remove("is-invalid");
+//     u_fullname.classList.add("is-valid");
+//     document.getElementById("email-validation").innerText = "";
+// }
+// else{
+//     u_fullname.classList.remove("is-valid");
+//     u_fullname.classList.add("is-invalid");
+//     document.getElementById("fullname-validation").innerText = "Name is required";
+// }
+
+    // email.classList.add("is-valid");
+
+// document.querySelector('.btn').onclick = function(){
+//     var password = document.querySelector('.pass').value;
+//     var password2 = document.querySelector('pass2').value;
+
+// if(u_password.value){
+//     u_password.classList.remove("is-invalid");
+//     u_password.classList.add("is-valid");
+//     document.getElementById("password-validation").innerText="";
+// }else{
+//     u_password.classList.remove("is-valid");
+//     u_password.classList.add("is-invalid");
+//     document.getElementById("password-validation").innerText="This field is required";
+// }
+
+
+// if(u_password2.value){
+//     u_password2.classList.remove("is-invalid");
+//     u_password2.classList.add("is-valid");
+//     document.getElementById("password2-validation").innerText="";
+// }else{
+//     u_password2.classList.remove("is-valid");
+//     u_password2.classList.add("is-invalid");
+//     document.getElementById("password2-validation").innerText="This field is required";
+// }
+// }
+
+
+ var u_fullname = document.myForm.u_fullname;
+
+// var u_password = document.myForm.u_password;
+// var u_password2 = document.myForm.u_password2;
+// // var form = document.myForm.regForm;
+// // var val = document.myForm.email-validation;
+
+// function validateEmail(email){
+//     var pattern =/^[^ ]*[@]*[^ ]*[\.][a-z]{2,3}$/;
+//     return false;
+// }
+// function validateIfHasNumOrSpecial(){
+//  var name = [aA-zZ]
+//  return true;
+// }
+
+
+
+var fullname = document.getElementById("fullname");
+
+if(!validateYourFullname(fullname)){
+    fullname.classList.add("is-invalid");
+    document.getElementById("fullname-validation").innerText = "Please enter again your Fullname";
+}
+else if (!fullname.value){
+    fullname.classList.remove("is-invalid")
+    fullname.classList.add("is-valid");
+    document.getElementById("fullname-validation").innerText = "";
+}
+else{
+    fullname.classList.remove("is-valid");
+    fullname.classList.add("is-invalid");
+    document.getElementById("fullname-validation").innerText = "Please enter your Fullname ";
+}

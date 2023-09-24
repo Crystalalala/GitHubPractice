@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form Validation</title>
+</head>
+<body>
+
+    <form id="regform" class="form" name="myForm" > <!--onsubmit=" validate(); return false"-->
+        <div class="input-group mb-4">
+            <input type="text" id="fullname" class="form-control form-control-lg bg-light fs-6" placeholder="Full Name" name="u_fullname" >
+        </div>
+        <span id="fullnameError" class="error"></span><br><br>
+        <!-- <div><small class="text-danger " id="fullname-validation" ></small></div>  -->
+        <div class="input-group mb-4">
+            <input  type="text" id="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email Address" name="u_email"    >
+        </div>
+        <div><small class="text-danger" id="email-validation" ></small></div>
+        <div class="input-group mb-4">
+            <input  type="password"  id="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name="u_password"  >
+        </div>  
+        <div><small class="text-danger" id="password-validation"></small></div>
+        <div class="input-group mb-4">
+            <input type="password" id="password2" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password" name="u_password2"   >
+        </div> 
+        <div><small class="text-danger" id="password2-validation"></small></div>
+        <div class="input-group mb-3 terms d-flex ">
+            <label>
+                <input type="checkbox" name="">
+                I accept the <a href="#">Terms of Use</a> & <a href="">Privacy Policy</a>
+            </label>
+        </div>
+        <div class="input-group-create mb-5">
+            <input type="submit" value="Create Account"class="btn btn-lg btn-primary w-50 fs-6"  style="background-color:#FF48A9 ;"></input>
+        </div>
+
+        <div class="text-secondary d-flex justify-content-center">
+            <label>
+                Already have an Account?<a href="#">Login here</a></div>
+            </label> 
+        </div>
+
+    </form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("regform");
+  
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const genderInput = document.getElementById("gender");
+    const termsInput = document.getElementById("terms");
+    
+    const fullname = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const gender = genderInput.value;
+    const terms = termsInput.checked;
+    
+    // Reset error messages
+    const errorElements = form.querySelectorAll('.error');
+    errorElements.forEach(errorElement => errorElement.textContent = '');
+    
+    let hasErrors = false;
+    
+    if (name === "") {
+      displayError("nameError", "Please enter your name.");
+      hasErrors = true;
+    }
+    
+    if (email === "") {
+      displayError("emailError", "Please enter your email.");
+      hasErrors = true;
+    } else if (!validateEmail(email)) {
+      displayError("emailError", "Please enter a valid email address.");
+      hasErrors = true;
+    }
+    
+    if (phone === "") {
+      displayError("phoneError", "Please enter your phone number.");
+      hasErrors = true;
+    }
+    
+    if (gender === "") {
+      displayError("genderError", "Please select your gender.");
+      hasErrors = true;
+    }
+    
+    if (!terms) {
+      displayError("termsError", "Please agree to the terms and conditions.");
+      hasErrors = true;
+    }
+    
+    if (!hasErrors) {
+      // If all validation checks pass, you can proceed with form submission
+      alert("Form submitted successfully!");
+    }
+  });
+  
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  function displayError(id, message) {
+    const errorElement = document.getElementById(id);
+    errorElement.textContent = message;
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
